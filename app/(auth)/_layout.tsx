@@ -5,5 +5,9 @@ export const unstable_settings = {
 };
 
 export default function AuthLayout() {
-  return <Stack screenOptions={{ headerShown: false }} />;
+  return (
+    <Stack screenOptions={{ headerShown: true }}>
+      <Stack.Screen options={{ title: "" }} name="sign-in" />
+    </Stack>
+  );
 }

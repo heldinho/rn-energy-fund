@@ -3,11 +3,17 @@
     "baseUrl": ".",
     "paths": {
       "@redux/*": [
-        "redux/*"
+        "src/redux/*"
       ],
       "@hooks/*": [
-        "hooks/*"
-      ]
+        "src/hooks/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@app/*": [
+        "app/*"
+      ],
     }
   },
   "extends": "expo/tsconfig.base"
