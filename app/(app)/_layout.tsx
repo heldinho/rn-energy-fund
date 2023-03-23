@@ -1,5 +1,4 @@
-import { Tabs, useRouter } from "expo-router";
-import { StatusBar } from "expo-status-bar";
+import { Tabs } from "expo-router";
 
 export const unstable_settings = {
   initialRouteName: "home",

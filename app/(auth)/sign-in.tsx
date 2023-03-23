@@ -5,7 +5,7 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from "react-native";
-import { useForm, FormProvider, SubmitErrorHandler } from "react-hook-form";
+import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "expo-router";
 import * as z from "zod";
@@ -29,8 +29,8 @@ export default function SignIn() {
     resolver: zodResolver(schema),
   });
 
-  const onError: SubmitErrorHandler<Schema> = (errors, e) => {
-    return console.log(errors);
+  const createAccount = () => {
+    router.push("/sign-up");
   };
 
   const onSubmit = (data: Schema) => {
@@ -59,20 +59,25 @@ export default function SignIn() {
             placeholder="Minimum 8 characters"
             rules={{ required: "Password is required!" }}
           />
+          <Pressable
+            className="mt-6 h-14 w-full rounded-md bg-purple-700 active:bg-purple-900"
+            onPress={methods.handleSubmit(onSubmit)}
+          >
+            <Text className="my-auto text-center text-base text-white">
+              Login
+            </Text>
+          </Pressable>
         </FormProvider>
-
-        <Pressable
-          className="mt-6 h-12 w-full rounded-md bg-purple-700"
-          onPress={methods.handleSubmit(onSubmit, onError)}
-        >
-          <Text className="my-auto text-center text-base text-white">
-            Login
-          </Text>
-        </Pressable>
 
         <Pressable>
           <Text className="font-xs mt-3 text-neutral-400">
-            Don’t have an account? <Text className="underline">Sign up</Text>{" "}
+            Don’t have an account?{" "}
+            <Text
+              onPress={createAccount}
+              className="font-xs text-neutral-400 underline"
+            >
+              Sign up
+            </Text>{" "}
             here
           </Text>
         </Pressable>

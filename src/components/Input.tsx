@@ -47,7 +47,7 @@ const Input: React.FC<TextInputProps> = (props) => {
   };
 
   return (
-    <View className="mb-2 w-full">
+    <View className="mb-5 w-full">
       <Text
         className={`sintony-regular mb-2 text-left text-xs text-neutral-400`}
       >
@@ -55,7 +55,7 @@ const Input: React.FC<TextInputProps> = (props) => {
       </Text>
       <View>
         <TextInput
-          className={`h-10 rounded-md bg-zinc-100 pl-4 font-regular text-sm ${
+          className={`h-12 rounded-md bg-zinc-100 pl-4 font-regular text-sm ${
             invalid && "border border-red-400 bg-red-100"
           }`}
           onChangeText={field.onChange}
@@ -66,7 +66,7 @@ const Input: React.FC<TextInputProps> = (props) => {
         />
         {secureTextEntry && (
           <Pressable
-            className="absolute right-4 h-10"
+            className="absolute right-4 h-12"
             onPress={handlePasswordVisibility}
           >
             <View className="flex-1 justify-center">
