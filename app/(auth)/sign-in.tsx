@@ -10,7 +10,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "expo-router";
 import * as z from "zod";
 
+import { set } from "@redux/userSlice";
 import Input from "@components/Input";
+import { useDispatch } from "react-redux";
 
 const schema = z.object({
   email: z.string().nonempty("E-mail is required").email(),
@@ -24,6 +26,7 @@ export type Schema = z.infer<typeof schema>;
 
 export default function SignIn() {
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const { ...methods } = useForm<Schema>({
     resolver: zodResolver(schema),
@@ -34,7 +37,7 @@ export default function SignIn() {
   };
 
   const onSubmit = (data: Schema) => {
-    console.log(data);
+    dispatch(set(data));
   };
 
   return (

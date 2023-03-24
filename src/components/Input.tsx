@@ -57,6 +57,8 @@ const Input: React.FC<TextInputProps> = (props) => {
         <TextInput
           className={`h-12 rounded-md bg-zinc-100 pl-4 font-regular text-sm ${
             invalid && "border border-red-400 bg-red-100"
+          } ${
+            !invalid && isSubmitted && "border border-green-400 bg-green-100"
           }`}
           onChangeText={field.onChange}
           onBlur={field.onBlur}

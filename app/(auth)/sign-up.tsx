@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
   Text,
   View,
@@ -35,6 +36,10 @@ export type Schema = z.infer<typeof schema>;
 export default function SignUp() {
   const router = useRouter();
   const params = useSearchParams();
+
+  useEffect(() => {
+    router.push("/modal");
+  }, []);
 
   const { ...methods } = useForm<Schema>({
     resolver: zodResolver(schema),
@@ -146,9 +151,3 @@ export default function SignUp() {
     </>
   );
 }
-
-/*
-<Pressable onPress={() => router.setParams({ color: "#770FDF" })}>
-  <Text>Ola</Text>
-</Pressable>
-*/

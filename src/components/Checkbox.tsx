@@ -45,8 +45,10 @@ const Input: React.FC<TextInputProps> = (props) => {
         <View className="flex-row items-start justify-center gap-1">
           <MaterialCommunityIcons
             size={24}
-            color={field.value ? "#e6e6e6" : "#F8719D"}
-            name="checkbox-blank-outline"
+            color={
+              field.value ? (isSubmitted ? "#BBF7D0" : "#e6e6e6") : "#F8719D"
+            }
+            name={field.value ? "checkbox-marked" : "checkbox-blank-outline"}
           />
           {label}
         </View>
