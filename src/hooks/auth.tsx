@@ -8,9 +8,9 @@ export const useProtectedRoute = (user) => {
   useEffect(() => {
     // If the user is not signed in and the initial segment is not anything in the auth group.
     if (!user.email || (!user.password && rootSegment !== "(auth)")) {
-      router.replace("/sign-in");
-    } else if (user.email && user.password && rootSegment !== "(app)") {
       router.replace("/home");
+    } else if (user.email && user.password && rootSegment !== "(app)") {
+      router.replace("/sign-in");
     }
   }, [user, rootSegment]);
 };

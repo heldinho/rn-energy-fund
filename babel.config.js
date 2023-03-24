@@ -10,9 +10,10 @@ module.exports = function (api) {
       ["module-resolver", {
         root: ".",
         alias: {
+          "@app": "./app",
+          "@assets": "./src/assets",
           "@hooks": "./src/hooks",
           "@redux": "./src/redux",
-          "@app": "./app",
           "@components": "./src/components"
         }
       }]

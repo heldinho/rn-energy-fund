@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import {
   Text,
   View,
@@ -54,7 +53,7 @@ export default function SignUp() {
       <Stack.Screen
         options={{
           headerTitle: () => (
-            <>
+            <View className="w-[300] flex-row items-center justify-center">
               <Svg className="mr-1" width={50} height={5} fill="none">
                 <Rect
                   width={50}
@@ -69,11 +68,17 @@ export default function SignUp() {
               <Svg className="mr-1" width={50} height={5} fill="none">
                 <Rect width={50} height={5} rx={2.5} fill="#F4F4F4" />
               </Svg>
-            </>
+            </View>
           ),
           title: "",
+          headerBackVisible: false,
           headerLeft: () => (
-            <Pressable className="active:bg-gray-100" onPress={router.back}>
+            <Pressable
+              className={`active:bg-gray-100 ${
+                Platform.OS === "android" && "invisible"
+              }`}
+              onPress={router.back}
+            >
               <MaterialCommunityIcons name={"arrow-left"} size={24} />
             </Pressable>
           ),
