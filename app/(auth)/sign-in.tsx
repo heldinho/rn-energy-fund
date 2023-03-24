@@ -66,18 +66,18 @@ export default function SignIn() {
             className="mt-6 h-14 w-full rounded-md bg-purple-700 active:bg-purple-900"
             onPress={methods.handleSubmit(onSubmit)}
           >
-            <Text className="my-auto text-center text-base text-white">
+            <Text className="my-auto text-center text-base font-medium text-white">
               Login
             </Text>
           </Pressable>
         </FormProvider>
 
         <Pressable>
-          <Text className="font-xs mt-3 text-neutral-400">
+          <Text className="mt-3 font-regular text-xs text-neutral-400">
             Don’t have an account?{" "}
             <Text
               onPress={createAccount}
-              className="font-xs text-neutral-400 underline"
+              className="font-regular text-xs text-neutral-400 underline"
             >
               Sign up
             </Text>{" "}

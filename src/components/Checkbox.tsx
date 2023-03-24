@@ -58,7 +58,9 @@ const Input: React.FC<TextInputProps> = (props) => {
         </View>
 
         {isSubmitted && (
-          <Text className="mt-2 text-red-400">{error?.message}</Text>
+          <Text className="mt-2 font-regular text-red-400">
+            {error?.message}
+          </Text>
         )}
       </Pressable>
     </View>

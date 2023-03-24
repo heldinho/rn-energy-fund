@@ -41,7 +41,7 @@ export default function Modal() {
         onPress={login}
         className="mt-6 h-14 w-full rounded-md bg-purple-700 active:bg-purple-900"
       >
-        <Text className="my-auto text-center text-base text-white">
+        <Text className="my-auto text-center text-base font-medium text-white">
           Go to login
         </Text>
       </Pressable>

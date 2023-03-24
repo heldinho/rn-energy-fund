@@ -17,7 +17,7 @@ const Variation: React.FC<VariationProps> = (props) => {
         name={up ? "arrow-top-right-thin" : "arrow-bottom-right-thin"}
       />
       <Text
-        className={`font-regular text-xs ${
+        className={`font-regular text-sm ${
           up ? "text-emerald-400" : "text-rose-400"
         }`}
       >

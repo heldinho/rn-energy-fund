@@ -18,7 +18,7 @@ export default function Home() {
 
   useEffect(() => {
     if (fund.selectedAsset) {
-      router.push("/trade");
+      router.replace("/trade");
     }
   }, [fund.selectedAsset]);
 
@@ -50,7 +50,9 @@ export default function Home() {
                 size={18}
                 name="arrow-top-right-thin"
               />
-              <Text className=" text-emerald-400">{fund.increase}</Text>
+              <Text className="font-regular text-base text-emerald-400">
+                {fund.increase}
+              </Text>
             </View>
           </View>
           <Pressable className="mb-1 flex-row items-center gap-1 rounded bg-purple-700/10 p-2 active:bg-purple-700/40">
@@ -66,7 +68,7 @@ export default function Home() {
         <View className="-mx-5 mt-8 mb-5 border border-zinc-100" />
         <Text className="mb-5 font-semi-bold text-lg">Funds</Text>
 
-        <View className="-mx-10">
+        <View className="-mx-9">
           <ScrollView
             showsHorizontalScrollIndicator={false}
             className="px-5"

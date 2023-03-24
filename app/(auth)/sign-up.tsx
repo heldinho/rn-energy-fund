@@ -145,17 +145,17 @@ export default function SignUp() {
                 className="mt-4 mb-2 h-14 w-full rounded-md bg-purple-700 active:bg-purple-900"
                 onPress={methods.handleSubmit(onSubmit)}
               >
-                <Text className="my-auto text-center text-base text-white">
+                <Text className="my-auto text-center text-base font-medium text-white">
                   Create account
                 </Text>
               </Pressable>
 
               <Pressable>
-                <Text className="font-xs mt-3 text-neutral-400">
+                <Text className="mt-3 font-regular text-xs text-neutral-400">
                   Already have an account?{" "}
                   <Text
                     onPress={login}
-                    className="font-xs text-black underline"
+                    className="font-regular text-xs text-black underline"
                   >
                     Log in Here
                   </Text>

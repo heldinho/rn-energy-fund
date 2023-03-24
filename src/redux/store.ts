@@ -3,12 +3,14 @@ import { configureStore } from '@reduxjs/toolkit'
 import userReducer from './userSlice';
 import fundReducer from './fundSlide';
 import articleReducer from './articleSlide';
+import companyReducer from './companySlide';
 
 export const store = configureStore({
   reducer: {
     user: userReducer,
     fund: fundReducer,
-    article: articleReducer
+    article: articleReducer,
+    company: companyReducer
   },
 })
 

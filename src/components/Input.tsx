@@ -55,11 +55,13 @@ const Input: React.FC<TextInputProps> = (props) => {
       </Text>
       <View>
         <TextInput
-          className={`h-12 rounded-md bg-zinc-100 pl-4 font-regular text-sm ${
+          placeholderTextColor="#CFCFCF"
+          className={`h-12 rounded-md bg-zinc-100 pl-4 font-regular text-sm text-black ${
             invalid && "border border-red-400 bg-red-100"
           } ${
             !invalid && isSubmitted && "border border-green-400 bg-green-100"
           }`}
+          autoCapitalize="none"
           onChangeText={field.onChange}
           onBlur={field.onBlur}
           value={field.value}
@@ -82,7 +84,7 @@ const Input: React.FC<TextInputProps> = (props) => {
         )}
       </View>
       {isSubmitted && (
-        <Text className="mt-2 text-red-400">{error?.message}</Text>
+        <Text className="mt-2 font-regular text-red-400">{error?.message}</Text>
       )}
     </View>
   );

@@ -21,7 +21,9 @@ const Stats: React.FC<StatsTypes> = (props) => {
           color="#A0A0A0"
         />
       </View>
-      <Text>{description}</Text>
+      <Text className="font-regular text-base text-neutral-400">
+        {description}
+      </Text>
     </View>
   );
 };
