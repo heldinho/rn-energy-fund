@@ -18,6 +18,7 @@ import { Sintony_400Regular } from "@expo-google-fonts/sintony";
 
 import { useProtectedRoute } from "@hooks/auth";
 import { store } from "@redux/store";
+import { StatusBar } from "expo-status-bar";
 
 const Child = () => {
   const user = useSelector((state) => state.user);
@@ -47,6 +48,7 @@ export default function RootLayout() {
   return (
     <Provider store={store}>
       <Child />
+      <StatusBar style="dark" />
     </Provider>
   );
 }

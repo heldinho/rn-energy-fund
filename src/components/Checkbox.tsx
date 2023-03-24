@@ -40,13 +40,17 @@ const Input: React.FC<TextInputProps> = (props) => {
   } = useController({ name, rules, defaultValue });
 
   return (
-    <View className="mb-5 w-full ">
+    <View className="w-full">
       <Pressable onPress={() => field.onChange(!field.value)}>
         <View className="flex-row items-start justify-center gap-1">
           <MaterialCommunityIcons
             size={24}
             color={
-              field.value ? (isSubmitted ? "#BBF7D0" : "#e6e6e6") : "#F8719D"
+              isSubmitted && field.value
+                ? "#BBF7D0"
+                : isSubmitted && !field.value
+                ? "#F8719D"
+                : "#e6e6e6"
             }
             name={field.value ? "checkbox-marked" : "checkbox-blank-outline"}
           />

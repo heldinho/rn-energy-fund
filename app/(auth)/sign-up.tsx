@@ -37,16 +37,16 @@ export default function SignUp() {
   const router = useRouter();
   const params = useSearchParams();
 
-  useEffect(() => {
-    router.push("/modal");
-  }, []);
-
   const { ...methods } = useForm<Schema>({
     resolver: zodResolver(schema),
   });
 
+  const login = () => {
+    router.replace("/");
+  };
+
   const onSubmit = (data: Schema) => {
-    console.log(data);
+    router.push("/modal");
   };
 
   return (
@@ -93,7 +93,7 @@ export default function SignUp() {
             <FormProvider {...methods}>
               <Input
                 label="First Name"
-                placeholder="Joe"
+                placeholder="John"
                 name="firstname"
                 rules={{ required: "First name is required!" }}
               />
@@ -124,24 +124,36 @@ export default function SignUp() {
               <Checkbox
                 label={
                   <Text
-                    className={`sintony-regular mb-2 text-left text-xs text-neutral-400`}
+                    className={`sora-regular text-left text-xs text-neutral-400`}
                   >
-                    I am over 18 years of age and I have read and agree to the
-                    Terms of Service and Privacy policy.
+                    I am over 18 years of age and I have read and agree to the{" "}
+                    <Text className="text-black">Terms of Service</Text> and{" "}
+                    <Text className="text-black">Privacy policy</Text>.
                   </Text>
                 }
                 name="terms"
-                secureTextEntry
                 placeholder="Minimum 8 characters"
-                rules={{ required: "Password is required!" }}
+                rules={{ required: "Please accept the terms!" }}
               />
 
               <Pressable
-                className="mt-6 h-14 w-full rounded-md bg-purple-700 active:bg-purple-900"
+                className="mt-4 mb-2 h-14 w-full rounded-md bg-purple-700 active:bg-purple-900"
                 onPress={methods.handleSubmit(onSubmit)}
               >
                 <Text className="my-auto text-center text-base text-white">
                   Create account
+                </Text>
+              </Pressable>
+
+              <Pressable>
+                <Text className="font-xs mt-3 text-neutral-400">
+                  Already have an account?{" "}
+                  <Text
+                    onPress={login}
+                    className="font-xs text-black underline"
+                  >
+                    Log in Here
+                  </Text>
                 </Text>
               </Pressable>
             </FormProvider>
