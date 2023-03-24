@@ -1,9 +1,14 @@
-import { View, Text } from "react-native";
+import { View, Text, Pressable } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { useDispatch } from "react-redux";
+
+import { selectAsset } from "@redux/fundSlide";
 
 import Windy from "@assets/graph-wind";
 import Sunny from "@assets/graph-sun";
 import Nature from "@assets/graph-nature";
+
+import Variation from "@components/Variation";
 
 const Images = {
   Windy: <Windy />,
@@ -32,9 +37,13 @@ const Card: React.FC<CardProps> = (props) => {
     signal = "positive",
   } = props;
   const up = signal === "positive";
+  const dispatch = useDispatch();
 
   return (
-    <View className="ml-4 rounded-lg border border-gray-200 p-3">
+    <Pressable
+      onPress={() => dispatch(selectAsset(props))}
+      className={`ml-4 rounded-lg border border-gray-200 p-3 active:bg-zinc-100`}
+    >
       <MaterialCommunityIcons size={20} name={icon} color={color} />
       <Text className="mt-1 font-semi-bold text-sm">{title}</Text>
 
@@ -42,20 +51,9 @@ const Card: React.FC<CardProps> = (props) => {
 
       <View className="mt-4 flex-row items-center">
         <Text className="mr-2 font-regular text-sm">{price}</Text>
-        <MaterialCommunityIcons
-          size={16}
-          color={up ? "#0FDF8F" : "#EE8688"}
-          name={up ? "arrow-top-right-thin" : "arrow-bottom-right-thin"}
-        />
-        <Text
-          className={`font-regular text-sm ${
-            up ? "text-emerald-400" : "text-rose-400"
-          }`}
-        >
-          {variation}
-        </Text>
+        <Variation up={up} variation={variation} />
       </View>
-    </View>
+    </Pressable>
   );
 };
 export default Card;

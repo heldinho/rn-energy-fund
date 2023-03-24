@@ -15,15 +15,15 @@ export default function AppLayout() {
     <Tabs>
       <Tabs.Screen
         options={{
-          tabBarActiveTintColor: "#770fdf",
+          tabBarActiveTintColor: "#771fdf",
           tabBarInactiveTintColor: "#000",
           tabBarLabel: ({ focused, color }) => {
             return (
               <View>
                 <Text
-                  className={`text-[${color}] ${
-                    focused && "font-regular text-xs"
-                  } ${!focused && " text-xs font-bold"}`}
+                  className={`text-[${color}] text-xs ${
+                    focused && "font-regular"
+                  } ${!focused && " font-bold"}`}
                 >
                   Home
                 </Text>
@@ -39,22 +39,22 @@ export default function AppLayout() {
       />
       <Tabs.Screen
         options={{
-          tabBarActiveTintColor: "#770fdf",
+          title: "Trade",
+          tabBarActiveTintColor: "#771fdf",
           tabBarInactiveTintColor: "#000",
           tabBarLabel: ({ focused, color }) => {
             return (
               <View>
                 <Text
-                  className={`text-[${color}] ${
-                    !focused && " text-xs font-bold"
-                  }`}
+                  className={`text-[${color}] text-xs ${
+                    focused && "font-regular"
+                  } ${!focused && " font-bold"}`}
                 >
                   Trade
                 </Text>
               </View>
             );
           },
-          headerShown: false,
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons
               name="swap-horizontal"
@@ -67,22 +67,23 @@ export default function AppLayout() {
       />
       <Tabs.Screen
         options={{
-          tabBarActiveTintColor: "#770fdf",
+          title: "Portfolio",
+          tabBarActiveTintColor: "#771fdf",
           tabBarInactiveTintColor: "#000",
           tabBarLabel: ({ focused, color }) => {
             return (
               <View>
                 <Text
-                  className={`text-[${color}] ${
-                    !focused && " text-xs font-bold"
-                  }`}
+                  className={`text-[${color}] text-xs ${
+                    focused && "font-regular"
+                  } ${!focused && " font-bold"}`}
                 >
-                  Trade
+                  Portfolio
                 </Text>
               </View>
             );
           },
-          headerShown: false,
+          headerShown: true,
           tabBarIcon: ({ color }) => (
             <Feather name="pie-chart" color={color} size={20} />
           ),

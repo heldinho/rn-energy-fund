@@ -1,4 +1,5 @@
 import { Pressable, ScrollView, Text, View } from "react-native";
+import { useRouter } from "expo-router";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -7,10 +8,19 @@ import Card from "@components/Card";
 import Business from "@assets/business";
 import { useSelector } from "react-redux";
 import Article from "@components/Article";
+import { useEffect } from "react";
 
 export default function Home() {
   const fund = useSelector((state) => state.fund);
   const article = useSelector((state) => state.article);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    if (fund.selectedAsset) {
+      router.push("/trade");
+    }
+  }, [fund.selectedAsset]);
 
   return (
     <SafeAreaView edges={["top"]} className="flex-1 bg-white">
@@ -53,7 +63,7 @@ export default function Home() {
           </Pressable>
         </View>
 
-        <View className="w-100 -mx-5 mt-8 mb-5 border border-zinc-100" />
+        <View className="-mx-5 mt-8 mb-5 border border-zinc-100" />
         <Text className="mb-5 font-semi-bold text-lg">Funds</Text>
 
         <View className="-mx-10">

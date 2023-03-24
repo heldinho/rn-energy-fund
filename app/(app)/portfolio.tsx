@@ -1,11 +1,14 @@
 import { View, Text } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-const Trade: {} = () => {
+const Portfolio: {} = () => {
   return (
-    <View>
-      <Text>laslals</Text>
-    </View>
+    <SafeAreaView className="flex-1">
+      <View className="flex-1 items-center justify-center">
+        <Text className="font-regular text-sm">Lorem Ipsum</Text>
+      </View>
+    </SafeAreaView>
   );
 };
 
-export default Trade;
+export default Portfolio;
