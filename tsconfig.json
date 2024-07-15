@@ -2,21 +2,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@redux/*": [
-        "src/redux/*"
-      ],
-      "@hooks/*": [
-        "src/hooks/*"
-      ],
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@app/*": [
-        "app/*"
-      ],
-      "@assets/*": [
-        "src/assets/*"
-      ],
+      "@redux/*": ["src/redux/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@components/*": ["src/components/*"],
+      "@app/*": ["app/*"],
+      "@assets/*": ["src/assets/*"]
     }
   },
   "extends": "expo/tsconfig.base"

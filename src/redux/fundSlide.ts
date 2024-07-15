@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from '@reduxjs/toolkit'
+import type { PayloadAction } from "@reduxjs/toolkit";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 export type Asset = {
@@ -20,16 +20,16 @@ export type Asset = {
   ter: string;
   closePrice: string;
   openPrice: string;
-}
+};
 
 type Fund = {
   selectedAsset: Asset;
-  portfolio: string
+  portfolio: string;
   account: string;
   increase: string;
   timeFilter: string[];
-  funds: Asset[]
-}
+  funds: Asset[];
+};
 
 const initialState: Fund = {
   selectedAsset: null,
@@ -55,8 +55,9 @@ const initialState: Fund = {
       vintageRange: "2019 – 2022",
       ter: "0.15%",
       closePrice: "$17.68",
-      openPrice: "$17.74"
-    }, {
+      openPrice: "$17.74",
+    },
+    {
       icon: "weather-sunny",
       color: "#f0b719",
       title: "Solar Fund",
@@ -73,8 +74,9 @@ const initialState: Fund = {
       vintageRange: "2019 – 2022",
       ter: "0.50%",
       closePrice: "$820.02",
-      openPrice: "$738.00"
-    }, {
+      openPrice: "$738.00",
+    },
+    {
       icon: "leaf",
       color: "#0fef8f",
       title: "Nature",
@@ -91,20 +93,20 @@ const initialState: Fund = {
       vintageRange: "2019 – 2021",
       ter: "1.30%",
       closePrice: "$17.68",
-      openPrice: "$12.00"
-    }
-  ]
-}
+      openPrice: "$12.00",
+    },
+  ],
+};
 
 const fundSlice = createSlice({
   name: "fund",
   initialState: initialState,
   reducers: {
     selectAsset(state, action: PayloadAction<Asset>) {
-      state.selectedAsset = action.payload
+      state.selectedAsset = action.payload;
     },
-  }
+  },
 });
 
-export const { selectAsset } = fundSlice.actions
-export default fundSlice.reducer
+export const { selectAsset } = fundSlice.actions;
+export default fundSlice.reducer;

@@ -49,8 +49,8 @@ const Input: React.FC<TextInputProps> = (props) => {
               isSubmitted && field.value
                 ? "#BBF7D0"
                 : isSubmitted && !field.value
-                ? "#F8719D"
-                : "#e6e6e6"
+                  ? "#F8719D"
+                  : "#e6e6e6"
             }
             name={field.value ? "checkbox-marked" : "checkbox-blank-outline"}
           />
