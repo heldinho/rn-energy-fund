@@ -24,8 +24,8 @@ export default function Home() {
 
   return (
     <SafeAreaView edges={["top"]} className="flex-1 bg-white">
-      <ScrollView className="flex-1 px-5">
-        <View className="mb-5 flex-row items-center justify-between">
+      <ScrollView className="flex-1">
+        <View className="mb-5 flex-row items-center justify-between px-5">
           <Pressable className="rounded-full bg-zinc-100 p-2">
             <MaterialCommunityIcons size={24} name="account" />
           </Pressable>
@@ -40,8 +40,8 @@ export default function Home() {
           </Pressable>
         </View>
 
-        <Text className="font-regular text-xs">Portfolio</Text>
-        <View className="flex-row justify-between">
+        <Text className="px-5 font-regular text-xs">Portfolio</Text>
+        <View className="flex-row justify-between px-5">
           <View>
             <View className="flex-row items-center">
               <Text className="font-semi-bold text-2xl">{fund.portfolio}</Text>
@@ -66,13 +66,14 @@ export default function Home() {
         </View>
 
         <View className="-mx-5 mt-8 mb-5 border border-zinc-100" />
-        <Text className="mb-5 font-semi-bold text-lg">Funds</Text>
+        <Text className="mb-5 px-5 font-semi-bold text-lg">Funds</Text>
 
         <View className="-mx-9">
           <ScrollView
             showsHorizontalScrollIndicator={false}
             className="px-5"
             horizontal
+            contentContainerStyle={{ paddingHorizontal: 20 }}
           >
             {fund.funds.map((f) => (
               <Card key={f.icon} {...f} />
@@ -81,23 +82,25 @@ export default function Home() {
           </ScrollView>
         </View>
 
-        <View className="mt-5 rounded-lg bg-purple-700 p-5">
-          <View className="flex-row">
-            <View className="flex-1 justify-center">
-              <Text className="mb-3 font-semi-bold text-[16px] text-white">
-                Learn more about carbon credits
-              </Text>
-              <Text className="font-regular text-xs text-white">
-                Check out our top tips!
-              </Text>
-            </View>
-            <View className="flex-1 items-end">
-              <Business />
+        <View className="px-5">
+          <View className="mt-5 rounded-lg bg-purple-700 p-5">
+            <View className="flex-row">
+              <View className="flex-1 justify-center">
+                <Text className="mb-3 font-semi-bold text-[16px] text-white">
+                  Learn more about carbon credits
+                </Text>
+                <Text className="font-regular text-xs text-white">
+                  Check out our top tips!
+                </Text>
+              </View>
+              <View className="flex-1 items-end">
+                <Business />
+              </View>
             </View>
           </View>
         </View>
 
-        <View className="-ml-4 mt-5 flex flex-row flex-wrap">
+        <View className="-ml-4 mt-5 flex flex-row flex-wrap px-5">
           {article.map((a) => (
             <Article key={a.id} {...a} />
           ))}
